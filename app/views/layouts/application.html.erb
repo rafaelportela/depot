@@ -13,13 +13,15 @@
 		<%= @page_title || "Pragmatic Bookshelf" %>
 	</div>
 	<div id="columns">
-		<a href="http://localhost:3000">Home</a><br />
-		<a href="http://localhost:3000">Questions</a><br />
-		<a href="http://localhost:3000">News</a><br />
-		<a href="http://localhost:3000">Contact</a><br />
-	</div>
-	<div id="main">
-		<%= yield %>
+		<div id="side">
+			<a href="http://localhost:3000">Home</a><br />
+			<a href="http://localhost:3000">Questions</a><br />
+			<a href="http://localhost:3000">News</a><br />
+			<a href="http://localhost:3000">Contact</a><br />
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
 	</div>
 </body>
 </html>
