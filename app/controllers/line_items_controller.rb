@@ -42,7 +42,7 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.line_items.build(:product => product)
+    @line_item = @cart.add_product(product.id)
 
     respond_to do |format|
       if @line_item.save
@@ -53,6 +53,8 @@ class LineItemsController < ApplicationController
         format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
       end
     end
+    
+    session[:counter] = 0;
   end
 
   # PUT /line_items/1
