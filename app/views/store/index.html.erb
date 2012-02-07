@@ -2,6 +2,10 @@
 <p id="notice"><%= notice %>
 <% end %>
 
+<% if @has_more_than_five_accesses %>
+  <p>You have <%= pluralize(session[:counter], "access")%></p>
+<% end %>  
+
 <h1>Your Pragmatic Catalog</h1>
 
 <% @products.each do |product| %>
