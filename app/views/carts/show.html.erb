@@ -1,4 +1,9 @@
 <h2>Your Pragmatic Cart</h2>
+
+<% if notice %>
+	<p class="notice"><%= notice %></p>
+<% end %>
+
 <ul>
 	<% @cart.line_items.each do |item| %>
 		<li><%= item.product.title %></li>
