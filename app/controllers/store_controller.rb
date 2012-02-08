@@ -3,10 +3,7 @@ class StoreController < ApplicationController
     @products = Product.all
     inc_counter
     
-    notice = "session " + "XXX " + session[:counter].to_s
-    puts notice
   end
-  
   
   private
   

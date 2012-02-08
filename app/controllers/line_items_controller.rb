@@ -41,8 +41,10 @@ class LineItemsController < ApplicationController
   # POST /line_items.xml
   def create
     @cart = current_cart
+    
     product = Product.find(params[:product_id])
-    @line_item = @cart.line_items.build(:product => product)
+    @line_item = @cart.add_product(product.id)
+    #@line_item = @cart.add_product(params[:product_id])
     
     session[:counter] = 0
 
