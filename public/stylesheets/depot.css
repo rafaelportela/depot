@@ -39,6 +39,21 @@
 	font-size: small;
 }
 
+#store .car_title {
+	font: 120% bold;
+}
+
+#store .item_price, #store .total_line {
+	text_align: right;
+}
+
+#store .total_line, #store .total_cell {
+	font-weight: bold;
+	border-top: 1px solid #595;
+}
+
+
+
 #store #notice {
         color: #000;
         border: 2px solid red;
