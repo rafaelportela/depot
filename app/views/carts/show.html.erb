@@ -1,7 +1,1 @@
-<h2>Your Pragmatic Cart</h2>
-
-<% if notice %>
-	<p class="notice"><%= notice %></p>
-<% end %>
-
-<%= render @cart %>
+<%= render(@cart.line_items) %>

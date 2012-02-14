@@ -3,7 +3,6 @@ class StoreController < ApplicationController
     @products = Product.all
     @cart = current_cart
     inc_counter
-    
   end
   
   private
