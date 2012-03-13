@@ -1,6 +1,8 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  after_destroy :ensure_an_admin_remains
+  
   validates :name, :presence => true, :uniqueness => true
   
   validates :password, :confirmation => true
@@ -28,6 +30,12 @@ class User < ActiveRecord::Base
     if password.present?
       generate_salt
       self.hashed_password = self.class.encrypt_password(password, salt)
+    end
+  end
+  
+  def ensure_an_admin_remains
+    if User.count.zero?
+      raise "Can't delete last user"
     end
   end
   
