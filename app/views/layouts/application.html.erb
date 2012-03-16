@@ -10,7 +10,7 @@
 <body id="store">
 	<div id="banner">
 		<%= image_tag "logo.png" %>
-		<%= @page_title || "Pragmatic Bookshelf" %>
+		<%= @page_title || I18n.t('.title') %>
 	</div>
 	<div id="columns">
 		<div id="side">
@@ -18,13 +18,13 @@
 			<% if @cart %>
 				<%= hidden_if_empty(@cart.line_items.empty?, :id => "cart") do %>
 					<%= render @cart %>
-				<% end %>	
-			<% end %>		
+				<% end %>
+			<% end %>
 			
-			<a href="/">Home</a><br />
-			<a href="/faq">Questions</a><br />
-			<a href="/news">News</a><br />
-			<a href="/contact">Contact</a><br />
+			<a href="/"><%= I18n.t('.home') %></a><br />
+			<a href="/faq"><%= I18n.t('.questions') %></a><br />
+			<a href="/news"><%= I18n.t('.news') %></a><br />
+			<a href="/contact"><%= I18n.t('.contact') %></a><br />
 			
 			<% if session[:user_id] %>
 				<br />
